@@ -1,0 +1,57 @@
+
+<!DOCTYPE html >
+<html>
+<head>
+<title>Touch, Mouse, Pointer Test</title>
+<style type="text/css">
+	.display
+	{
+		/* Block areas from being selected */
+		-ms-user-select: none;
+	}
+	body
+	{
+		/* Block area from manipulation actions (zoom, pan) */
+		touch-action: none;
+	}
+	.ta {
+		float: left;
+		margin-right: 5px;
+	}
+
+</style>
+<script src="Index.js" type="text/javascript"></script>
+</head>
+
+<body id = "page" onload="onLoad()">
+    <!-- Elements to try out gestures -->
+    <div class= "display" id="Red" style="position: relative; top: 0px; left: 0px; width: 300px; height: 250px; background-color: red; margin: 50px;"></div>
+
+	<div class="ta">
+		<strong><pre><font size="2" face="Courier">    Type            ScrX  ScrY  CliX  CliY   PgX   PgY  Current   Source    Id   Touches   Time</font></pre></strong>
+		<textarea id=touchOut rows="18" cols="100" wrap="off" readonly="readonly" ></textarea>
+		<br>
+		<button onclick=clearMessages('touch')>Clear Messages</button>
+		<br>
+        <p>Event Count: <span id="touchEventCount"></span></p>
+	</div>
+	
+	<div class="ta">
+		<strong><pre><font size="2" face="Courier">    Type            ScrX  ScrY  CliX  CliY   PgX   PgY  Current   Source    Id   Touches   Time</font></pre></strong>
+		<textarea id=pointerOut rows="18" cols="100" wrap="off" readonly="readonly" ></textarea>
+		<br>
+		<button onclick=clearMessages('pointer')>Clear Messages</button>
+        <br>
+        <p>Event Count: <span id="pointerEventCount"></span></p>
+	</div>
+	
+	<div class="ta">
+		<strong><pre><font size="2" face="Courier">    Type            ScrX  ScrY  CliX  CliY   PgX   PgY  Current   Source    Id   Touches   Time</font></pre></strong>
+		<textarea id=mouseOut rows="18" cols="100" wrap="off" readonly="readonly" ></textarea>
+		<br>
+		<button onclick=clearMessages('mouse')>Clear Messages</button>
+		<br>
+        <p>Event Count: <span id="mouseEventCount"></span></p>
+	</div>
+</body>
+</html>
